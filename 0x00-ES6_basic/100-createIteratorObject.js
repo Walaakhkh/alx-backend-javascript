@@ -1,12 +1,12 @@
-// Testing the function
-const employees = {
-    ...createEmployeesObject('engineering', ['Bob', 'Jane']),
-    ...createEmployeesObject('marketing', ['Sylvie']),
-};
+export default function createIteratorObject(report) {
+  const employees = report.allEmployees;
+  const allEmployees = [];
 
-const report = createReportObject(employees);
-const reportWithIterator = createIteratorObject(report);
+  // Collect all employees into a single array
+  for (const department in employees) {
+    allEmployees.push(...employees[department]);
+  }
 
-for (const item of reportWithIterator) {
-    console.log(item);
+  // Create an iterator for the allEmployees array
+  return allEmployees[Symbol.iterator]();
 }
