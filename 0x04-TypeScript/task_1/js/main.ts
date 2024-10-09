@@ -29,11 +29,14 @@ class TeacherClass implements Teacher {
   }
 }
 
-// Create an instance of Teacher
-const teacher3: Teacher = new TeacherClass('John', 'Doe', false, 'London');
+// Create an instance of Director
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
 
-// Add an additional property
-teacher3.contract = false;
-
-// Log the teacher object to the console
-console.log(teacher3);
+// Log the director object to the console
+console.log(director1);
