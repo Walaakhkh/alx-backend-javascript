@@ -1,8 +1,9 @@
 export default function appendToEachArrayValue(array, appendString) {
-  for (let value of array) {
-    // Update the array in-place using the index from the original array
-    array[array.indexOf(value)] = appendString + value;
+  const newArray = [];  // Create a new array to hold the modified values
+
+  for (const value of array) {  // Use 'const' for 'value' as it is never reassigned
+    newArray.push(`${appendString}${value}`);  // Use template literals to append
   }
 
-  return array;
+  return newArray;  // Return the new array
 }
