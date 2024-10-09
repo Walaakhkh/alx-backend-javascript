@@ -67,6 +67,18 @@ function executeWork(employee: Director | Teacher): void {
   }
 }
 
+// Define the Subjects string literal type
+type Subjects = 'Math' | 'History';
+
+// Function to teach a class based on the subject
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+}
+
 
 // Test cases
 console.log(createEmployee(200)); // Should print a Teacher instance
@@ -78,3 +90,6 @@ const director = createEmployee(1000);
 
 executeWork(teacher);  // Should print "Getting to work"
 executeWork(director); // Should print "Getting to director tasks"
+
+console.log(teachClass('Math'));    // Expected output: "Teaching Math"
+console.log(teachClass('History')); // Expected output: "Teaching History"
